@@ -4,9 +4,13 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 var c = canvas.getContext('2d')
 
-
+var amounts = document.getElementById('amount')
+    digits = document.getElementById('digits')
+amount.addEventListener("input", function() {
+        digits.innerHTML = amounts.value;
+    }, false);
 // Arc / Circle
-var maxRadius = 50
+var maxRadius = 80
 var circleColors = [
   'rgb(8, 135, 118)',
   'rgb(119, 22, 230)',
@@ -76,18 +80,23 @@ function Circle(x,y,radius,mx,my,isAlpha)
   }
 
 }
-
+function changed()
+{
+  var cc = amounts.value
+  return cc
+}
 var circleArray = []
-for(i=0 ; i< 200 ; i++){
+for(i=0 ; i< changed() ; i++){
 
-  let radius = Math.floor(Math.random() * 40)
+  let radius = Math.floor(Math.random() * 15) + 1
   let x = Math.random() * (innerWidth - radius * 2)+radius
   let y = Math.random() * (innerHeight - radius * 2)+radius
   let mx = (Math.random() - 0.5)
   let my = (Math.random() - 0.5)
-  if(i > 150)
-    circleArray.push(new Circle(x,y,radius,mx,my, true))
-  else
+  //For making some balls transparent uncomment if statement below
+  // if(i > 150)
+  //   circleArray.push(new Circle(x,y,radius,mx,my, true))
+  // else
     circleArray.push(new Circle(x,y,radius,mx,my, false))
 }
 
