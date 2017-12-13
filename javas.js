@@ -6,9 +6,10 @@ var c = canvas.getContext('2d')
 
 var amounts = document.getElementById('amount')
     digits = document.getElementById('digits')
-amount.addEventListener("input", function() {
-        digits.innerHTML = amounts.value;
-    }, false);
+amount.addEventListener("change", function() {
+    createCircle();
+    digits.innerHTML = amounts.value;
+}, false);
 // Arc / Circle
 var maxRadius = 80
 var circleColors = [
@@ -80,34 +81,33 @@ function Circle(x,y,radius,mx,my,isAlpha)
   }
 
 }
-function changed()
-{
-  var cc = amounts.value
-  return cc
-}
-var circleArray = []
-for(i=0 ; i< changed() ; i++){
 
-  let radius = Math.floor(Math.random() * 15) + 1
-  let x = Math.random() * (innerWidth - radius * 2)+radius
-  let y = Math.random() * (innerHeight - radius * 2)+radius
-  let mx = (Math.random() - 0.5)
-  let my = (Math.random() - 0.5)
-  //For making some balls transparent uncomment if statement below
-  // if(i > 150)
-  //   circleArray.push(new Circle(x,y,radius,mx,my, true))
-  // else
-    circleArray.push(new Circle(x,y,radius,mx,my, false))
+var circleArray = []
+function createCircle()
+{
+    circleArray = [];
+    for(i=0 ; i< amounts.value ; i++){
+      let radius = Math.floor(Math.random() * 15) + 1
+      let x = Math.random() * (innerWidth - radius * 2)+radius
+      let y = Math.random() * (innerHeight - radius * 2)+radius
+      let mx = (Math.random() - 0.5)
+      let my = (Math.random() - 0.5)
+      //For making some balls transparent uncomment if statement below
+      // if(i > 150)
+      //   circleArray.push(new Circle(x,y,radius,mx,my, true))
+      // else
+        circleArray.push(new Circle(x,y,radius,mx,my, false))
+    }
 }
+createCircle();
 
 
 function animatedBall()
 {
-requestAnimationFrame(animatedBall)
-c.clearRect(0,0, innerWidth,innerHeight)
-  for (i = 0; i < circleArray.length; i++) {
-    circleArray[i].update()
-  }
-
+    requestAnimationFrame(animatedBall)
+    c.clearRect(0,0, innerWidth,innerHeight)
+    for (i = 0; i < circleArray.length; i++) {
+        circleArray[i].update()
+    }
 }
 animatedBall()
