@@ -4,36 +4,6 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 var c = canvas.getContext('2d')
 
-// c.fillStyle = getRandomColor()
-// c.fillRect(400,10, 200,50)
-// c.fillStyle = getRandomColor()
-// c.fillRect(400,70, 50,50)
-// c.fillStyle = getRandomColor()
-// c.fillRect(400,140, 300,50)
-// c.fillStyle = getRandomColor()
-// c.fillRect(400,210, 120,50)
-// c.fillStyle = getRandomColor()
-// c.fillRect(400,280, 380,50)
-// c.fillStyle = getRandomColor()
-// c.fillRect(400,350, 258,50)
-// //Line
-// c.beginPath()
-// c.moveTo(400,10)
-// c.lineTo(400,400)
-// c.lineTo(800,400)
-// c.strokeStyle = getRandomColor()
-// c.stroke()
-// console.log(canvas);
-
-
-// function getRandomColor() {
-//   var letters = '0123456789ABCDEF';
-//   var color = '#';
-//   for (var i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 14)];
-// }
-// return color;
-// }
 
 // Arc / Circle
 var maxRadius = 50
