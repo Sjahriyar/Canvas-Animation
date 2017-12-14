@@ -13,10 +13,11 @@ amount.addEventListener("change", function() {
 // Arc / Circle
 var maxRadius = 80
 var circleColors = [
-  'rgb(8, 135, 118)',
-  'rgb(119, 22, 230)',
-  'rgb(185, 199, 118)',
-  'rgb(0, 172, 158)'
+  '#243752',
+  '#0A6187',
+  '#FFFFFF',
+  '#C7C7C7',
+  '#F25944'
 ]
 
 var mouse = {
@@ -29,6 +30,13 @@ window.addEventListener('mousemove', function(event){
   mouse.y = event.y
 })
 
+//While window resizes
+window.addEventListener('resize', ()=>{
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+  //generate
+  createCircle()
+})
 function Circle(x,y,radius,mx,my,isAlpha)
 {
   this.alpha = isAlpha
@@ -111,3 +119,4 @@ function animatedBall()
     }
 }
 animatedBall()
+createCircle()
