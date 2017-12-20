@@ -8,7 +8,8 @@
         margin: 0;
         background: rgb(66, 66, 66)
       }
-      input[type=range] {
+
+      /*input[type=range] {
         -webkit-appearance: none;
         width: 300px;
         margin: 9.3px 0;
@@ -92,18 +93,34 @@
       }
       input[type=range]:focus::-ms-fill-upper {
         background: #367ebd;
+      }*/
+      .menu{
+        position: absolute;
+        width: 200px;
+        background: black;
+        margin-top: 50px;
       }
-
+      .container{
+        display: inline;
+      }
+      canvas{
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
-<input style="display: inline;" type="range" min="1" max="400" id="amount" oninput="createCircle()">
-<h3 id="digits" style="display: inline;"></h3>
-<canvas id="canvas">
+    <div class="menu">
+    <label for="" style="color: white;">Balls Number:
+      <input type="range" min="1" max="400" oninput="ballGenerator()" id="BallsNum"></label>
+    </div>
+    <!-- <input style="display: inline;" type="range" min="1" max="400" id="amount" oninput="createCircle()"> -->
+    <h3 id="digits" style="display: inline;"></h3>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div class="container">
 
-</canvas>
 
 <!-- Import JAVASCRIPT -->
-    <script src="javas.js"></script>
+    <script src="collision.js"></script>
   </body>
 </html>

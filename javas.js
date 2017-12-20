@@ -11,20 +11,23 @@ amount.addEventListener("change", function() {
     digits.innerHTML = amounts.value;
 }, false);
 // Arc / Circle
+
+//Global Variables
 var maxRadius = 80
 var circleColors = [
-  '#243752',
-  '#0A6187',
-  '#FFFFFF',
-  '#C7C7C7',
-  '#F25944'
+  '#F79E6B',
+  '#F7CD82',
+  '#5B584F',
+  '#92A78C',
+  '#E0D5AD'
 ]
+var gravity = 0.99
 
+//Detect Mouse move
 var mouse = {
   x: undefined,
   y: undefined
 }
-
 window.addEventListener('mousemove', function(event){
   mouse.x = event.x
   mouse.y = event.y
@@ -37,6 +40,8 @@ window.addEventListener('resize', ()=>{
   //generate
   createCircle()
 })
+
+//Object and Conditions
 function Circle(x,y,radius,mx,my,isAlpha)
 {
   this.alpha = isAlpha
@@ -68,6 +73,8 @@ function Circle(x,y,radius,mx,my,isAlpha)
     if(this.y + radius > innerHeight || this.y - radius < 0)
     {
       this.my = -this.my
+    }else{
+      this.dy += gravity
     }
     if(mouse.x - this.x < 50 && mouse.x - this.x > -50 && mouse.y - this.y < 50 && mouse.y - this.y > -50){
       if(this.radius < maxRadius)
@@ -90,10 +97,11 @@ function Circle(x,y,radius,mx,my,isAlpha)
 
 }
 
+//
 var circleArray = []
 function createCircle()
 {
-    circleArray = [];
+
     for(i=0 ; i< amounts.value ; i++){
       let radius = Math.floor(Math.random() * 15) + 1
       let x = Math.random() * (innerWidth - radius * 2)+radius
