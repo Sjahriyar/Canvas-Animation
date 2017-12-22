@@ -80,7 +80,6 @@ function Ball(x,y,radius,color,dx,dy){
 }
 
 //Implementation
-
 //Create One Ball b each click
 let oneball
 function makeOneBall(){
@@ -94,6 +93,7 @@ function secBall(){
 }
 secBall()
 makeOneBall()
+
 console.log(secondBall);
 //Animation Request
 function animate(){

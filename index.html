@@ -8,7 +8,9 @@
         margin: 0;
         background: rgb(66, 66, 66)
       }
-
+      #amount{
+        position: absolute;
+      }
       /*input[type=range] {
         -webkit-appearance: none;
         width: 300px;
@@ -111,9 +113,8 @@
   <body>
     <div class="menu">
     <label for="" style="color: white;">Balls Number:
-      <input type="range" min="1" max="400" oninput="ballGenerator()" id="BallsNum"></label>
     </div>
-    <!-- <input style="display: inline;" type="range" min="1" max="400" id="amount" oninput="createCircle()"> -->
+    <input style="display: inline;" type="range" min="1" max="400" id="amount" oninput="createCircle()">
     <h3 id="digits" style="display: inline;"></h3>
     </div>
     <canvas id="canvas"></canvas>
@@ -121,6 +122,6 @@
 
 
 <!-- Import JAVASCRIPT -->
-    <script src="collision.js"></script>
+    <script src="breakOut.js"></script>
   </body>
 </html>

@@ -9,8 +9,8 @@ if (canvas.getContext) {
 }
 
 
-var gravity = -
-var friction = 0.99
+let gravity = 0.99
+let friction = 0.99
 
 function randomInitFromRange(min,max)
   {
@@ -29,15 +29,15 @@ function Balls(x,y,dy,dx,color,radius)
     this.update = function()
       {
 
-        // if(this.y + this.radius > canvas.height)
-        // {
-        //     this.dy = -this.dy * 0.91
-        // }
-        // else{
-        //   this.dy += gravity
-        // }
-        //
-        // this.y += this.dy
+        if(this.y + this.radius > canvas.height)
+        {
+            this.dy = -this.dy * 0.91
+        }
+        else{
+          this.dy += gravity
+        }
+        
+        this.y += this.dy
         this.x += this.speedX
         this.y += this.speedY
         this.draw()
