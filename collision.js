@@ -94,7 +94,7 @@ function secBall(){
 secBall()
 makeOneBall()
 
-console.log(secondBall);
+
 //Animation Request
 function animate(){
   requestAnimationFrame(animate)

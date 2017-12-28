@@ -40,6 +40,6 @@ this.velocity = {
         this.x += this.velocity.x
         this.y += this.velocity.y
     }
-    console.log(this.velocity.y);
+
     
 }
